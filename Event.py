@@ -1,5 +1,6 @@
 from math import randint
-class Event: #Negative
+class Event: 
+	#Negative
 	def get_sick(self, state):
 		  state.ruler_is_sick = True
 		  print("get_sick (current hp)", state.ruler_hp)
@@ -69,26 +70,3 @@ class Event: #Negative
 			state.faith += math.randint(10, 20) 
 			state.faith %= 100 print("prosper(smute,faith)", state.smute, state.faith) 
 		return state
-class Game:
-	def start():
-		state = State(Ruler())
-  		enemies = [] enemies.append()
-  		while (True):
-			if state.hp <= 0 or state.territory + state.seeded <= 0 or state.smute >= 100 %:
-				print("u_lost")
-				state.seed(state.harvest + int(input("Skolko seyat?")) 
-				state.giveOut(int(input("Skolko kushac?")) 
-				state.sellHarvest(int(input())) state.recruit(int(input())) state.collect() if state.ruler_is_sick:
-			state.hp -= 100
-			if randint(0, 10) == 0:
-				event().relief()
-			else :
-				if randint(0, 30) == 0:
-					event().get_sick() 
-			event().meteor(state)
-			event().rats(state)
-			event().disorder(state)							
-			event().prosper(state)
-			#events...
-																																						 
-																																						 
