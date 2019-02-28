@@ -1,11 +1,13 @@
 from math import randint
+
 class Event: 
 #Negative
 	def get_sick(self, state):
 		state.ruler_is_sick = True
 		print("get_sick (current hp)", state.ruler_hp)
-		return state.ruler_is_sick
-	def declare_war(self, state, CTS): #State.declare_wa
+		return
+	
+	def solved_war(self, state, CTS): #State.declare_wa
 		if randint(0, 50) == 0:
 			print("declared_war")# balance this 
 		if (CTS):
@@ -24,12 +26,14 @@ class Event:
 			state.lieges = int(state.lieges * 0.9) 
 			state.gold -= 1000 
 			state.land -= 100
-		return state
+		return
+	
 	def rats(self, state):
 		if randint(0, 50) == 0:
 			state.harvest -= randint(500) 
 			print("rats") 
-		return state.harvest
+		return
+	
 	def meteor(self, state):
 		if randint(0, 50) == 0:
 			if (input("meteor_gold_or_lieges") == "1"):
@@ -37,35 +41,39 @@ class Event:
 				return state
 			else :
 				state.lieges -= randint(500, 700)
-				return state
+		return
+	
 	def disorder(self, state):
 		if randint(0, 50) == 0:
 			state.smute += randint(15, 20) 
 			print("smute", state.smute) 
-			return state.smute
+		return
 	# Positive
+	
 	def bless(self, state):
 		if randint(0, 50) == 0:
 			state.faith += randint(10, 20) 
 			print("bless ", state.faith) 
-		return state.faith
+		return
+	
 	def good_harvest(self, state):
 		if randint(0, 50) == 0:
 			state.harvest += randint(100, 200) 
 			print("good_harvest ", state.harvest) 
-		return state.harvest
-	def chanceToStrike(self, state):
+		return
+	
+	def chanceToStrike(self, enemy, state):
 		if randint(0, 50) == 0:
 			if (input("strike?(0,1)") == 1):
-				state.declare_war(state, True)
-			return state
-		else :
-			return state
+				state.declare_war(enemy)
+		return
+	
 	def relief(self,state):
 		if randint(0, 50) == 0:
 			state.ruler_is_sick = False 
 			print("relief (current hp)", state.ruler_hp) 
-			return state.ruler_sick
+		return
+	
 	def prosper(self,state):
 		if randint(0, 50) == 0:
 			state.smute -= randint(15, 20) 
@@ -73,4 +81,4 @@ class Event:
 			state.faith += randint(10, 20) 
 			state.faith %= 100 
 			print("prosper(smute,faith)", state.smute, state.faith) 
-		return state
+		return
