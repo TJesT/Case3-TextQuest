@@ -4,7 +4,7 @@ class Event:
 #Negative
 	def get_sick(self, state):
 		state.ruler_is_sick = True
-		print("get_sick (current hp)", state.ruler_hp)
+		print("get_sick (current hp)", state.hp)
 		return
 	
 	def solved_war(self, state, CTS): #State.declare_wa
@@ -30,14 +30,14 @@ class Event:
 	
 	def rats(self, state):
 		if randint(0, 50) == 0:
-			state.harvest -= randint(500) 
+			state.harvest -= randint(0, 500) 
 			print("rats") 
 		return
 	
 	def meteor(self, state):
 		if randint(0, 50) == 0:
 			if (input("meteor_gold_or_lieges") == "1"):
-				state.gold -= randint(500)
+				state.gold -= randint(0, 500)
 				return state
 			else :
 				state.lieges -= randint(500, 700)
