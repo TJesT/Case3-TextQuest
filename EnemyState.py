@@ -14,8 +14,8 @@ class EnemyState(State):
 
 		self.territory = random.randint(25*difficulty, 100 * difficulty)
 
-		self.lieges = 40 * (200/self.territory)
-		self.army = 16 * (200/self.territory)
+		self.lieges = 40 * int(self.territory/200)
+		self.army = 16 * int(self.territory/200)
 		self.smute = 0
 		self.tax = 50
 		self.harvest = 8000
@@ -27,8 +27,3 @@ class EnemyState(State):
 		state.lieges += self.lieges
 		state.harvest += self.harvest
 		this.defeated = True
-
-	def toString(self):
-		return (" ".join((self.hp, self.inWar, self.ruler_is_sick, self.territory, \
-		self.lieges, self.army,	self.smute,	self.tax, self.harvest,	self.RELIGION, \
-		self.NAME)))
