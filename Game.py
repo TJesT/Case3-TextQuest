@@ -12,16 +12,50 @@ class Game:
 		enemies = [EnemyState(1), EnemyState(1), EnemyState(1)] 
 		
 		while (True):
+			
+			if state.hp <= 0:
+				print("Победа! Ты прошёл игру")
+				break
+			if state.territory + state.seeded <= 0:
+				print("Проигрыш! Ты никчёмный правитель")
+				break
+			if state.smute >= 100 :
+				print("Поражение!!! Тебя свергли!")
+				break
+
 			state.printInfo()
-			if state.hp <= 0 or state.territory + state.seeded <= 0 or state.smute >= 100 :
-				print("u_lost")
+
 			if not self.seeded:
 				if input("\nСеем урожай? (+/-)") == '+':
-					self.seeded = True
-					state.seed(state.harvest + int(input("Skolko seyat? > ")))
+					while True:
+						d = input("Skolko seyat? > ")
+						try:
+							d = int(d)
+						except ValueError:
+							print("Wrong format")
+							continue
+						if d > 0:
+							self.seeded = True
+							state.seed(state.harvest + d)
+							break
+					
+					
+					
+					
 			else:
 				self.seed_count += 1
-			state.giveOut(int(input("Skolko kushac? > ")))
+			if input("Раздаём подданным? (+/-)") == '+':
+				while True:
+					d = input("Skolko kushac? > ")
+					try:
+						d = int(d)
+					except ValueError:
+						print("Wrong format")
+						continue
+					if d > 0:
+						state.giveOut(вd)
+						break
+				
 			#state.setHarvest(state.harvest - int(input()))
 			if input("Нанимает бойцов? (+/-)") == '+':
 				state.recruit(int(input("Сколько?")))
