@@ -24,7 +24,14 @@ class PlayerState(State):
 		self.harvest = 8000
 
 		self.RELIGION = input("Какой религии придерживаетесь?: ")
+		self.RELIGION = self.RELIGION if len(self.RELIGION) != 0 else "Коммунизм"
 		self.NAME = input("Имя вашего правителя?: ")
+		self.NAME = self.NAME if len(self.NAME) != 0 else "Дима"
+
+	def collect(self):
+		self.harvest = int(self.seeded*0.8)
+		self.seeded = 0
+		return
 
 	def getReligion(self):
 		return self.RELIGION
@@ -36,28 +43,34 @@ class PlayerState(State):
 		if self.inWar:
 			print("Уже воюем")
 			return
-
 		state.inWar = False
 		self.inWar = False
+		return
 
 	def declareWar(self, state):
 		state.inWar = True
 		self.inWar = True
+		return
     
 	def giveOut(self, count):
 		self.harvest -= count
 		self.faith += 20 * (1 - self.faith/100)
+		return
 
 	def recruit(self, count):
 		self.lieges -= count
 		self.army += count
+		return
 
 	def setTax(self, tax):
 		self.tax = tax
+		return
             
 	def setHarvest(self,harvest):
 		self.harvest = harvest
+		return
 
 	def seed(self, count):
 		self.seeded += count
 		self.territory -= count
+		return
