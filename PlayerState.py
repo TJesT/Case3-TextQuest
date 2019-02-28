@@ -1,7 +1,10 @@
+from Ruler import *
 from State import *
 
 class PlayerState(State):
-	def __init__(self, ruler):
+	def __init__(self):
+		ruler = Ruler()
+		
 		State.count_of_states += 1
 
 		self.inWar = False
@@ -21,7 +24,7 @@ class PlayerState(State):
 		self.harvest = 8000
 
 		self.RELIGION = input("Какой религии придерживаетесь?: ")
-		self.NAME = input("Название вашего государства?: ")
+		self.NAME = input("Имя вашего правителя?: ")
 
 	def getReligion(self):
 		return self.RELIGION
