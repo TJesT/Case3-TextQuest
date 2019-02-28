@@ -1,4 +1,4 @@
-from math import randint
+from random import randint
 
 class Event: 
 #Negative
@@ -71,7 +71,7 @@ class Event:
 	def relief(self,state):
 		if randint(0, 50) == 0:
 			state.ruler_is_sick = False 
-			print("relief (current hp)", state.ruler_hp) 
+			print("relief (current hp)", state.hp) 
 		return
 	
 	def prosper(self,state):
