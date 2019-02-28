@@ -11,7 +11,7 @@ class Event: #Negative
 			  diff = 0 * 5
 		else :
 			  deff = 1
-		if (state.army * state.faith * (1 - state.smute) % (200 + randint(0, 50)) > 30 * diff && state.harvest > 100:
+		if (state.army * state.faith * (1 - state.smute) % (200 + randint(0, 50)) > 30 * diff and state.harvest > 100:
 				print("win") 
 				state.army = int(state.army * 0.8) 
 				state.lieges = int(state.lieges * 1.05) 
