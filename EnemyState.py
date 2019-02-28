@@ -1,5 +1,5 @@
 from State import *
-import random
+from random import randint
 
 RELIGIONS = ["Сатанизм", "Христианство", "Коммунизм", "Атеизм", "Киберспорт"]
 NAMES = ["Адольф", "Омарон", "Игилий", "Авкадий", "Дима", "Тимур"]
@@ -12,7 +12,7 @@ class EnemyState(State):
 		self.inWar = False
 		self.ruler_is_sick = False
 
-		self.territory = random.randint(25*difficulty, 100 * difficulty)
+		self.territory = randint(25*difficulty, 100 * difficulty)
 
 		self.lieges = 40 * int(self.territory/200)
 		self.army = 16 * int(self.territory/200)
@@ -20,8 +20,8 @@ class EnemyState(State):
 		self.tax = 50
 		self.harvest = 8000
 
-		self.RELIGION = RELIGIONS[random.randint(0, len(RELIGIONS) - 1)]
-		self.NAME = NAMES[random.randint(0, len(NAMES) - 1)]
+		self.RELIGION = RELIGIONS[randint(0, len(RELIGIONS) - 1)]
+		self.NAME = NAMES[randint(0, len(NAMES) - 1)]
 
 	def weLost(self, state):
 		state.lieges += self.lieges
