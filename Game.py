@@ -73,6 +73,8 @@ class Game:
 			Event().rats(state)
 			Event().disorder(state)
 			Event().prosper(state)
+			Event().bless(state)
+			Event().good_harvest(state)
 
 			state.hp -= 1000
 			input("\nПрошёл один месяц. Для продолжения нажмите клавишу ввода\n")
