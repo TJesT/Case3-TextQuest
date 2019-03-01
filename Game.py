@@ -45,7 +45,7 @@ class Game:
 				self.seed_count += 1
 			if input("Раздаём подданным? (+/-)") == '+':
 				while True:
-					d = input("Skolko kushac? > ")
+					d = input("Сколько раздать?")
 					try:
 						d = int(d)
 					except ValueError:
