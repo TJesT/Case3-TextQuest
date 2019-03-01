@@ -12,7 +12,9 @@ class Game:
 		enemies = [EnemyState(1), EnemyState(1), EnemyState(1)] 
 		
 		while (True):
-			
+			if state.lieges <= 0:
+				print("sasat")
+				break
 			if state.hp <= 0:
 				print("Победа! Ты прошёл игру")
 				break
