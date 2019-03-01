@@ -9,7 +9,7 @@ class Event:
 	
 	def solved_war(self, state, CTS): #State.declare_wa
 		if randint(0, 50) == 0:
-			print("declared_war")# balance this 
+			print("Война закончилась")# balance this 
 			if (CTS):
 				diff = 0.5
 			else :
@@ -31,7 +31,7 @@ class Event:
 	def rats(self, state):
 		if randint(0, 50) == 0:
 			state.harvest -= randint(0, 500) 
-			print("rats") 
+			print("Крысы съели зерно") 
 		return
 	
 	def meteor(self, state):
@@ -46,20 +46,20 @@ class Event:
 	def disorder(self, state):
 		if randint(0, 50) == 0:
 			state.smute += randint(15, 20) 
-			print("smute", state.smute) 
+			print("Смута в стране", state.smute) 
 		return
 	# Positive
 	
 	def bless(self, state):
 		if randint(0, 50) == 0:
 			state.faith += randint(10, 20) 
-			print("bless ", state.faith) 
+			print("Боженька поможет ", state.faith) 
 		return
 	
 	def good_harvest(self, state):
 		if randint(0, 50) == 0:
 			state.harvest += randint(100, 200) 
-			print("good_harvest ", state.harvest) 
+			print("Урожай наступил ", state.harvest) 
 		return
 	
 	def chanceToStrike(self, enemy, state):
@@ -71,7 +71,7 @@ class Event:
 	def relief(self,state):
 		if randint(0, 50) == 0:
 			state.ruler_is_sick = False 
-			print("relief (current hp)", state.hp) 
+			print("Вылечился", state.hp) 
 		return
 	
 	def prosper(self,state):
@@ -80,5 +80,5 @@ class Event:
 			state.gold += randint(150, 200) 
 			state.faith += randint(10, 20) 
 			state.faith %= 100 
-			print("prosper(smute,faith)", state.smute, state.faith) 
+			print("Боженька тебя спас", state.smute, state.faith) 
 		return
