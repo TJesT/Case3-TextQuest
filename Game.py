@@ -28,7 +28,7 @@ class Game:
 			if not self.seeded:
 				if input("\nСеем урожай? (+/-)") == '+':
 					while True:
-						d = input("Skolko seyat? > ")
+						d = input("Сколько сеять >")
 						try:
 							d = int(d)
 						except ValueError:
@@ -38,9 +38,6 @@ class Game:
 							self.seeded = True
 							state.seed(state.harvest + d)
 							break
-					
-					
-					
 					
 			else:
 				self.seed_count += 1
@@ -56,7 +53,6 @@ class Game:
 						state.giveOut(вd)
 						break
 				
-			#state.setHarvest(state.harvest - int(input()))
 			if input("Нанимает бойцов? (+/-)") == '+':
 				state.recruit(int(input("Сколько?")))
 			if self.seed_count > 10:
@@ -77,5 +73,5 @@ class Game:
 			Event().prosper(state)
 
 			state.hp -= 1000
-			input("\nПрошёл один месяц. Для продолжения нажмите любую клавишу\n")
+			input("\nПрошёл один месяц. Для продолжения нажмите клавишу ввода\n")
 			
