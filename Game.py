@@ -13,7 +13,7 @@ class Game:
 		
 		while (True):
 			if state.lieges <= 0:
-				print("sasat")
+				print("so so")
 				break
 			if state.hp <= 0:
 				print("Победа! Ты прошёл игру")
