@@ -75,7 +75,7 @@ class Game:
 			Event().prosper(state)
 			Event().bless(state)
 			Event().good_harvest(state)
-
+			Event().solved_war(state,True)
 			state.hp -= 1000
 			input("\nПрошёл один месяц. Для продолжения нажмите клавишу ввода\n")
 			
