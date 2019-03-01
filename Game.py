@@ -52,7 +52,7 @@ class Game:
 						print("Wrong format")
 						continue
 					if d > 0:
-						state.giveOut(вd)
+						state.giveOut(d)
 						break
 				
 			if input("Нанимает бойцов? (+/-)") == '+':
